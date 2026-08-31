@@ -1,18 +1,24 @@
 <?php
 
+use App\Core\Database;
 use App\Dto\CommandeDTO;
 use App\Model\CommandeRepository;
 
-require_once(dirname(__DIR__)."/vendor/autoload.php");
+require_once(dirname(__DIR__) . "/vendor/autoload.php");
 
 $data = [
-    "prix" => 300,
+    "prix" => 320,
     "reduction" => false
 ];
 
 $commandeDto = new CommandeDTO($data["prix"], $data['reduction']);
 
-// var_dump($commandeDto->reductionApplique); die();
-$repo = new CommandeRepository();
+$db = null;
+
+if ($db === null) {
+    $db = new Database();
+}
+
+$repo = new CommandeRepository($db);
 
 $repo->save($commandeDto);
