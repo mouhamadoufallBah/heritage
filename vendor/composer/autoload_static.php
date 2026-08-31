@@ -12,6 +12,8 @@ class ComposerStaticInitff751f123942bf295d1133cdf7d612dd
             'App\\Service\\' => 12,
             'App\\Model\\' => 10,
             'App\\Http\\' => 9,
+            'App\\Entity\\' => 11,
+            'App\\Dto\\' => 8,
             'App\\Core\\' => 9,
         ),
     );
@@ -28,6 +30,14 @@ class ComposerStaticInitff751f123942bf295d1133cdf7d612dd
         'App\\Http\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/Controller',
+        ),
+        'App\\Entity\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Entity',
+        ),
+        'App\\Dto\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Dto',
         ),
         'App\\Core\\' => 
         array (

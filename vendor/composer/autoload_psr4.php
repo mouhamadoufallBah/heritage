@@ -9,5 +9,7 @@ return array(
     'App\\Service\\' => array($baseDir . '/src/Service'),
     'App\\Model\\' => array($baseDir . '/src/Repository'),
     'App\\Http\\' => array($baseDir . '/src/Controller'),
+    'App\\Entity\\' => array($baseDir . '/src/Entity'),
+    'App\\Dto\\' => array($baseDir . '/src/Dto'),
     'App\\Core\\' => array($baseDir . '/src/Core'),
 );

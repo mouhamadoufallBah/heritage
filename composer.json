@@ -6,7 +6,8 @@
             "App\\Entity\\": "src/Entity/",
             "App\\Core\\": "src/Core/",
             "App\\Service\\": "src/Service/",
-            "App\\Http\\": "src/Controller/"
+            "App\\Http\\": "src/Controller/",
+            "App\\Dto\\": "src/Dto/"
         }
     },
     "authors": [
