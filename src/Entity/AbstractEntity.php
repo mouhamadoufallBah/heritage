@@ -2,19 +2,18 @@
 
 namespace App\Entity;
 
-use DateTimeImmutable;
 
 abstract class AbstractEntity
 {
     protected int $id;
-    protected DateTimeImmutable $dateCreation;
+    protected \DateTimeImmutable $dateCreation;
 
     public function getId(): int
     {
         return $this->id;
     }
 
-    public function getDateCreation(): DateTimeImmutable
+    public function getDateCreation(): \DateTimeImmutable
     {
         return $this->dateCreation;
     }
@@ -24,7 +23,7 @@ abstract class AbstractEntity
         $this->id = $id;
     }
 
-    public function setDateCreation(DateTimeImmutable $dateCreation): void
+    public function setDateCreation(\DateTimeImmutable $dateCreation): void
     {
         $this->dateCreation = $dateCreation;
     }
