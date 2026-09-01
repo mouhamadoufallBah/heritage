@@ -3,26 +3,20 @@
 namespace App\Model;
 
 use App\Dto\CommandeDTO;
-use App\Core\Database; 
+use App\Core\Database;
+use App\Entity\Commande;
 
-class CommandeRepository
+class CommandeRepository extends Repository
 {
-    private Database $database;
-
-    public function __construct(Database $database)
-    {
-        $this->database = $database;
-    }
-
-    public function save(CommandeDTO $data): void
+    public function save(Commande $data): void
     {
         try {
             $sql = "INSERT INTO commande (prix_final, reduction_appliquee, date_creation) VALUES (?, ?, ?)";
 
-            $this->database->executeUpdate($sql, [
-                $data->prixFinal,
-                $data->reductionApplique ? 1 : 0,
-                $data->dateCreation->format('Y-m-d H:i:s')
+            $this->executeUpdate($sql, [
+                $data->getPrixFinal(),
+                $data->getReductionApplique() ? 1 : 0,
+                $data->getDateCreation()->format('Y-m-d H:i:s')
             ]);
 
             echo "Ajouté avec succès \n";

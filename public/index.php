@@ -1,24 +1,23 @@
 <?php
 
 use App\Core\Database;
+use App\Core\SingletonInstances;
 use App\Dto\CommandeDTO;
 use App\Model\CommandeRepository;
+use App\Service\CommandeService;
 
 require_once(dirname(__DIR__) . "/vendor/autoload.php");
 
 $data = [
-    "prix" => 320,
-    "reduction" => false
+    "prix" => 100,
+    "reduction" => true
 ];
 
 $commandeDto = new CommandeDTO($data["prix"], $data['reduction']);
 
-$db = null;
+$db = SingletonInstances::get(Database::class);
+$repo = SingletonInstances::get(CommandeRepository::class);
+$service = SingletonInstances::get(CommandeService::class);
 
-if ($db === null) {
-    $db = new Database();
-}
-
-$repo = new CommandeRepository($db);
-
-$repo->save($commandeDto);
+$result = $service->onSaveVente($commandeDto);
+$repo->save($result);

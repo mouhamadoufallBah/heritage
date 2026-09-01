@@ -5,7 +5,7 @@ namespace App\Core;
 
 abstract class AbstractEntity
 {
-    protected int $id;
+    protected ?int $id;
     protected \DateTimeImmutable $dateCreation;
 
     public function getId(): int
