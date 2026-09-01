@@ -4,7 +4,6 @@ namespace App\Service;
 
 use App\Dto\CommandeDTO;
 use App\Entity\Commande;
-use App\Model\CommandeRepository;
 
 class CommandeService
 {
@@ -12,7 +11,7 @@ class CommandeService
     {
         $taux = ($data->prixFinal * 10) / 100;
         $prixApplique = $data->reductionApplique ? $data->prixFinal - $taux : $data->prixFinal;
-        $commande = new Commande($prixApplique, $data->reductionApplique);
+        $commande = new Commande($prixApplique, $data->reductionApplique, $data->dateCreation);
         return $commande;
     }
 }

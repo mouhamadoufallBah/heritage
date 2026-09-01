@@ -1,7 +1,7 @@
 <?php
 namespace App\Core;
 
-abstract class Database
+class Database
 {
     private static ?\PDO $pdo = null;
 
